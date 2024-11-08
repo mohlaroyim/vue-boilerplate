@@ -1,6 +1,6 @@
 export const useValidation = () => {
   const validate = (form: Record<string, any>, rules: Record<string, any>)=>{
-    const errors = {}
+    const errors: Record<string, any> = {}
 
     Object.entries(form).forEach(([key, value])=>{
       if(rules[key]){

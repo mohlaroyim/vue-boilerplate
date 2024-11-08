@@ -58,7 +58,7 @@ const onSubmit = async () => {
       router.push('/')
     }
   }else{
-    errors.value = ({...validation.errors})
+    errors.value = {...validation.errors} as UserFormType
   }
 }
 
