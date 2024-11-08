@@ -9,6 +9,16 @@ export const VALID_LOGIN_FORM = {
   password: 'mohi'
 }
 
+export const WRONG_CREDENTIALS_FORM = {
+  username: 'invalid_username',
+  password: 'invalid_password'
+}
+
+export const INVALID_LOGIN_FORM = {
+  username: 'invalid username',
+  password: ''
+}
+
 export const VALID_REGISTER_FORM = {
   username: 'mohi1',
   password: 'mohi',

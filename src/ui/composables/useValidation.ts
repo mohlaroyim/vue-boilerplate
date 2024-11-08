@@ -19,8 +19,8 @@ export const useValidation = () => {
     return ({validated: true, errors})
   }
 
-  const isRequiredString = () => ({ regex: /^[^\\s]+$/, error: 'This field is required.' })
-  const isRequiredNumber = () => ({ regex: /^-?\\d+(\\.\\d+)?$/, error: 'This field is required.' })
+  const isRequiredString = () => ({ regex: /^[^\s]+$/, error: 'This field is required.' })
+  const isRequiredNumber = () => ({ regex: /^-?\d+(\.\d+)?$/, error: 'This field is required.' })
   const isRequiredEmail = () => ({ regex: /^[^\s@]+@[a-zA-Z\d.-]+\.[a-zA-Z]{2,}$/, error: 'Please enter a valid email.' })
 
   return{
