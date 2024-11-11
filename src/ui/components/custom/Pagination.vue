@@ -18,13 +18,13 @@ import {computed} from "vue";
 const props = defineProps<PaginationPropsType>()
 const emit = defineEmits<{ (event: 'update:modelValue', newPage: number): void; }>();
 
-const firstItem = computed(() => (props.page - 1) * props.currentPageItems + 1);
-const lastItem = computed(() => {
-  if (props.page === props.totalPages && props.totalPages * props.currentPageItems !== props.totalItems) {
-    return props.totalItems;
-  }
-  return props.page * props.currentPageItems;
-});
+// const firstItem = computed(() => (props.page - 1) * props.currentPageItems + 1);
+// const lastItem = computed(() => {
+//   if (props.page === props.totalPages && props.totalPages * props.currentPageItems !== props.totalItems) {
+//     return props.totalItems;
+//   }
+//   return props.page * props.currentPageItems;
+// });
 
 const maxVisiblePages = 5;
 const halfMaxVisiblePages = Math.floor(maxVisiblePages / 2);

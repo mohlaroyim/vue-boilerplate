@@ -16,17 +16,17 @@
 </template>
 
 <script lang="ts" setup>
-import {ref} from "vue";
-import {useAuthStore} from "../stores/useAuthStore";
+import { ref } from "vue";
+import { useAuthStore } from "../stores/useAuthStore";
 import SelectInput from "@/ui/components/inputs/SelectInput.vue";
 import PasswordInput from "@/ui/components/inputs/PasswordInput.vue";
-import {useRouter} from "vue-router";
-import {useToastStore} from "@/ui/stores/useToastStore";
+import { useRouter } from "vue-router";
+import { useToastStore } from "@/ui/stores/useToastStore";
 import GHyperlink from "@/ui/components/elements/GHyperlink.vue";
 import ToastNotification from "@/ui/components/custom/ToastNotification.vue";
 import GButton from "@/ui/components/elements/GButton.vue";
 import TextInput from "@/ui/components/inputs/TextInput.vue";
-import {useValidation} from "@/ui/composables/useValidation";
+import { useValidation } from "@/ui/composables/useValidation";
 
 interface UserFormType {
   username: string,
@@ -38,7 +38,7 @@ interface UserFormType {
 const authStore = useAuthStore()
 const toastStore = useToastStore()
 const router = useRouter()
-const {validate, isRequiredEmail, isRequiredString} = useValidation()
+const { validate, isRequiredEmail, isRequiredString } = useValidation()
 
 
 const form = ref<UserFormType>({
@@ -54,10 +54,10 @@ const errors = ref<UserFormType>({
   role: ''
 })
 const rules = ref({
- username: isRequiredString(),
- password: isRequiredString(),
- email: isRequiredEmail(),
- role: isRequiredString()
+  username: isRequiredString(),
+  password: isRequiredString(),
+  email: isRequiredEmail(),
+  role: isRequiredString()
 })
 const loading = ref<boolean>(false)
 
@@ -69,15 +69,15 @@ const onSubmit = async () => {
     loading.value = false
 
     if(res.error){
-      toastStore.error({text: res.error})
+      toastStore.error({ text: res.error })
     }else if(res.success){
       if(res.message){
-        toastStore.success({text: res.message})
+        toastStore.success({ text: res.message })
       }
       router.push('/')
     }
   }else {
-    errors.value = {...validation.errors} as UserFormType
+    errors.value = { ...validation.errors } as UserFormType
   }
 
 }

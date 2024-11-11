@@ -19,7 +19,7 @@
 
 <script lang="ts" setup>
 
-import type {TextInputEmitsType, TextInputProps} from "../../types/InputTypes";
+import type { TextInputEmitsType, TextInputProps } from "@/ui/types/InputTypes";
 
 defineProps<TextInputProps>();
 const emits = defineEmits<TextInputEmitsType>()

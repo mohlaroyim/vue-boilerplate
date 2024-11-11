@@ -1,5 +1,4 @@
 export interface InputProps {
-  name: string,
   error?: string | boolean,
   label?: string,
   placeholder?: string

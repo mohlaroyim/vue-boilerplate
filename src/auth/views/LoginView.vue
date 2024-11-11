@@ -3,7 +3,7 @@
     <div class="form-card">
       <div class="form-title">Welcome to VPP</div>
       <TextInput name="username" label="Username" v-model="form.username" data-test-id="user_name" :error="errors.username" />
-      <PasswordInput name="password" v-model="form.password" label="Password"data-test-id="user_password" :error="errors.password" />
+      <PasswordInput name="password" v-model="form.password" label="Password" data-test-id="user_password" :error="errors.password" />
       <GButton :submitting="loading"  @click="onSubmit" data-test-id="login_button">
         Login
       </GButton>

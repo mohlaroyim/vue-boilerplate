@@ -24,7 +24,7 @@ test('should display error message on invalid credentials', async ({page})=>{
 
   await expect(toast).toBeVisible();
   await page.waitForTimeout(2000);
-  await expect(toast).not.toBeVisible();
+  await expect(toast).toBeHidden();
 })
 
 test('should highlight invalid fields on invalid credentials', async ({page})=>{

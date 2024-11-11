@@ -10,14 +10,32 @@ export default [
 
   {
     name: 'app/files-to-ignore',
-    ignores: ['**/dist/**', '**/dist-ssr/**', '**/coverage/**'],
+    ignores: ['**/dist/**', '**/dist-ssr/**', '**/coverage/**', "src/shims-tsx.d.ts", "src/shims-vue.d.ts"],
   },
 
   ...pluginVue.configs['flat/essential'],
+  {
+    rules: {
+      'object-curly-spacing': ['error', 'always'],
+      'object-curly-newline': ['off', {
+        ObjectExpression: { multiline: true },
+        ObjectPattern: { multiline: true },
+        ImportDeclaration: { multiline: true },
+        ExportDeclaration: { multiline: true, minProperties: 2 }
+      }],
+      indent: ['error', 2, { SwitchCase: 1 }],
+      'no-console': 'error',
+      'space-before-function-paren': ['error', {
+        anonymous: 'never',
+        named: 'never',
+        asyncArrow: 'always'
+      }],
+    }
+  },
   ...vueTsEslintConfig(),
 
   {
     ...pluginPlaywright.configs['flat/recommended'],
-    files: ['e2e/**/*.{test,spec}.{js,ts,jsx,tsx}'],
+    files: ['tests/e2e/**/*.{test,spec}.{js,ts,jsx,tsx}'],
   },
 ]

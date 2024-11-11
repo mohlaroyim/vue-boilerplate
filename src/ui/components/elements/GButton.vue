@@ -1,8 +1,8 @@
 <template>
   <button
-    :disabled="disabled"
+    :disabled="disabled || submitting"
     class="btn-default"
-    :class="[classList, {disabled}]"
+    :class="computedClasses"
     :style="style"
     :title="title"
     :type="type"
@@ -10,19 +10,28 @@
     @click="handleClick"
   >
     <slot></slot>
-    <Loader v-if="submitting"/>
+    <Loader v-if="submitting" />
   </button>
 </template>
 
 <script lang="ts" setup>
 import Loader from "@/ui/components/custom/Loader.vue";
-import type {ButtonProps} from "@/ui/types/ButtonProps";
-import type {ButtonEmitsType} from "@/ui/types/ButtonEmitsType";
+import type { ButtonProps } from "@/ui/types/ButtonProps";
+import type { ButtonEmitsType } from "@/ui/types/ButtonEmitsType";
+import { computed } from "vue";
 
-withDefaults(defineProps<ButtonProps>(), {classList: 'btn-default', type: 'submit'})
+const props = withDefaults(defineProps<ButtonProps>(), { classList: 'btn-default', type: 'submit' })
 const emit = defineEmits<ButtonEmitsType>();
 
+const computedClasses = computed(() => [
+  props.classList,
+  { disabled: props.disabled || props.submitting },
+]);
+
 function handleClick() {
-  emit('click');
+  if(!props.submitting){
+    emit('click');
+  }
 }
+
 </script>

@@ -56,7 +56,7 @@ const fetchProducts = async () => {
   loading.value = false
 };
 
-watch(currentPage, (newPage) => {
+watch(currentPage, () => {
   fetchProducts()
 });
 
