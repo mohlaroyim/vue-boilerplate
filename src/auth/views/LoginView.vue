@@ -14,16 +14,16 @@
 </template>
 
 <script lang="ts" setup>
-import {ref} from "vue";
-import {useAuthStore} from "../stores/useAuthStore";
+import { ref } from "vue";
+import { useAuthStore } from "../stores/useAuthStore";
 import PasswordInput from "@/ui/components/inputs/PasswordInput.vue";
 import TextInput from "@/ui/components/inputs/TextInput.vue";
-import {useToastStore} from "@/ui/stores/useToastStore";
-import {useRouter} from "vue-router";
+import { useToastStore } from "@/ui/stores/useToastStore";
+import { useRouter } from "vue-router";
 import GHyperlink from "@/ui/components/elements/GHyperlink.vue";
 import ToastNotification from "@/ui/components/custom/ToastNotification.vue";
 import GButton from "@/ui/components/elements/GButton.vue";
-import {useValidation} from "@/ui/composables/useValidation";
+import { useValidation } from "@/ui/composables/useValidation";
 
 interface UserFormType {
   username: string,
@@ -33,7 +33,7 @@ interface UserFormType {
 const authStore = useAuthStore()
 const toastStore = useToastStore()
 const router = useRouter()
-const {isRequiredString, validate} = useValidation()
+const { isRequiredString, validate } = useValidation()
 
 const rules = ref({
   username: isRequiredString(),
@@ -52,13 +52,13 @@ const onSubmit = async () => {
     loading.value = false
 
     if(res.error){
-      toastStore.error({text: res.error})
+      toastStore.error({ text: res.error })
     }else{
-      toastStore.success({timeout: 60000, text: 'Yeeey'})
+      toastStore.success({ timeout: 60000, text: 'Yeeey' })
       router.push('/')
     }
   }else{
-    errors.value = {...validation.errors} as UserFormType
+    errors.value = { ...validation.errors } as UserFormType
   }
 }
 

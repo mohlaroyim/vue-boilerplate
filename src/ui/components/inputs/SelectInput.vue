@@ -20,7 +20,7 @@
 
 <script lang="ts" setup>
 
-import type {SelectInputEmitsType, SelectInputProps} from "../../types/InputTypes";
+import type { SelectInputEmitsType, SelectInputProps } from "../../types/InputTypes";
 
 defineProps<SelectInputProps>()
 const emits = defineEmits<SelectInputEmitsType>()

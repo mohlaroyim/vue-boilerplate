@@ -19,7 +19,7 @@
 </template>
 
 <script lang="ts" setup>
-import type {NumberInputEmitsType, NumberInputProps} from "@/ui/types/InputTypes";
+import type { NumberInputEmitsType, NumberInputProps } from "@/ui/types/InputTypes";
 
 const props = defineProps<NumberInputProps>()
 const emits = defineEmits<NumberInputEmitsType>()

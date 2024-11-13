@@ -30,17 +30,17 @@
             v-model="currentPage"
         />
       </div>
-      <Loader v-else-if="loading"/>
+      <GLoader v-else-if="loading"/>
     </div>
   </main>
 </template>
 
 <script setup lang="ts">
-import {computed, onMounted, ref, watch} from "vue";
-import {useAuthStore} from "@/auth/stores/useAuthStore";
-import {useProductStore} from "@/eCommerce/stores/useProductStore";
-import Pagination from "@/ui/components/custom/Pagination.vue";
-import Loader from "@/ui/components/custom/Loader.vue";
+import { computed, onMounted, ref, watch } from "vue";
+import { useAuthStore } from "@/auth/stores/useAuthStore";
+import { useProductStore } from "@/eCommerce/stores/useProductStore";
+import Pagination from "@/ui/components/custom/GPagination.vue";
+import GLoader from "@/ui/components/custom/GLoader.vue";
 
 const authStore = useAuthStore()
 const productStore = useProductStore()

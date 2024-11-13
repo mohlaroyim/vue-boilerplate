@@ -17,7 +17,7 @@
 
 <script lang="ts" setup>
 import TextInput from "@/ui/components/inputs/TextInput.vue";
-import {ref} from "vue";
+import { ref } from "vue";
 import TextAreaInput from "@/ui/components/inputs/TextAreaInput.vue";
 import NumberInput from "@/ui/components/inputs/NumberInput.vue";
 

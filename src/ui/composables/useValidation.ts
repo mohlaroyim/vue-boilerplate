@@ -13,10 +13,10 @@ export const useValidation = () => {
     })
 
     if(Object.keys(errors).length > 0){
-      return ({validated: false, errors})
+      return ({ validated: false, errors })
     }
 
-    return ({validated: true, errors})
+    return ({ validated: true, errors })
   }
 
   const isRequiredString = () => ({ regex: /^[^\s]+$/, error: 'This field is required.' })

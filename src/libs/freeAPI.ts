@@ -27,7 +27,7 @@ defaultInstance.interceptors.request.use((config) => {
   return config
 })
 
-export const freeApiPost = async (url: string, params: any, options = {}) => {
+export const freeApiPost = async (url: string, params: Record<string, string|number|boolean>, options = {}) => {
   try {
     const res = await defaultInstance.post(
       url,
@@ -47,7 +47,7 @@ export const freeApiPost = async (url: string, params: any, options = {}) => {
 }
 
 
-export const freeApiGet = async (url: string, params?: any, options = {}) => {
+export const freeApiGet = async (url: string, params?: Record<string, string|number|boolean>, options = {}) => {
   try {
     const res = await defaultInstance.get(url, { ...params, ...options })
 

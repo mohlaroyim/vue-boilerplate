@@ -13,7 +13,7 @@
 </template>
 
 <script lang="ts" setup>
-import {useToastStore} from "../../stores/useToastStore";
+import { useToastStore } from "../../stores/useToastStore";
 import type { ToastStatusType } from "../../stores/useToastStore";
 
 const toastClassMap: Record<ToastStatusType, string> = {

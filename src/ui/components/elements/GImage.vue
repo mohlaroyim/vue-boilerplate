@@ -11,8 +11,8 @@
 </template>
 
 <script lang="ts" setup>
-import {computed} from "vue";
-import type {ImageProps} from "../../types/ElementTypes";
+import { computed } from "vue";
+import type { ImageProps } from "../../types/ElementTypes";
 
 const props = withDefaults(defineProps<ImageProps>(), {
   classList: 'img-default',

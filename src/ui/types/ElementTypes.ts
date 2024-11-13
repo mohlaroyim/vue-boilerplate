@@ -1,4 +1,4 @@
-import type {CSSProperties} from "vue";
+import type { CSSProperties } from "vue";
 
 
 // type ButtonType = 'reset'|'submit'|'button'
@@ -12,14 +12,17 @@ import type {CSSProperties} from "vue";
 //     type?: ButtonType,
 //     dataTestId?: string
 // }
+type TargetTypes = '_blank' | '_self'| '_parent' | '_top'
 
 export interface HyperlinkProps {
-    submitting?: boolean,
-    disabled?: boolean,
-    classList?: string,
-    title?: string,
-    style?: string | CSSProperties,
-    href: string
+  submitting?: boolean,
+  disabled?: boolean,
+  classList?: string,
+  title?: string,
+  style?: string | CSSProperties,
+  href: string,
+  target?: TargetTypes,
+  rel?: string
 }
 
 

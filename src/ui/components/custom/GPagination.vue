@@ -12,8 +12,8 @@
 
 <script setup lang="ts">
 import GButton from "../elements/GButton.vue";
-import type {PaginationPropsType} from "@/ui/types/PaginationPropsType";
-import {computed} from "vue";
+import type { PaginationPropsType } from "@/ui/types/PaginationPropsType";
+import { computed } from "vue";
 
 const props = defineProps<PaginationPropsType>()
 const emit = defineEmits<{ (event: 'update:modelValue', newPage: number): void; }>();

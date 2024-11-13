@@ -7,13 +7,12 @@ export default [
     name: 'app/files-to-lint',
     files: ['**/*.{ts,js,mts,tsx,vue}'],
   },
-
   {
     name: 'app/files-to-ignore',
     ignores: ['**/dist/**', '**/dist-ssr/**', '**/coverage/**', "src/shims-tsx.d.ts", "src/shims-vue.d.ts"],
   },
-
   ...pluginVue.configs['flat/essential'],
+  ...vueTsEslintConfig(),
   {
     rules: {
       'object-curly-spacing': ['error', 'always'],
@@ -30,10 +29,9 @@ export default [
         named: 'never',
         asyncArrow: 'always'
       }],
+      '@typescript-eslint/no-explicit-any': 'warn',
     }
   },
-  ...vueTsEslintConfig(),
-
   {
     ...pluginPlaywright.configs['flat/recommended'],
     files: ['tests/e2e/**/*.{test,spec}.{js,ts,jsx,tsx}'],

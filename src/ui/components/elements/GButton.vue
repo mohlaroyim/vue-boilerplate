@@ -10,12 +10,12 @@
     @click="handleClick"
   >
     <slot></slot>
-    <Loader v-if="submitting" />
+    <GLoader v-if="submitting" />
   </button>
 </template>
 
 <script lang="ts" setup>
-import Loader from "@/ui/components/custom/Loader.vue";
+import GLoader from "@/ui/components/custom/GLoader.vue";
 import type { ButtonProps } from "@/ui/types/ButtonProps";
 import type { ButtonEmitsType } from "@/ui/types/ButtonEmitsType";
 import { computed } from "vue";
@@ -29,7 +29,7 @@ const computedClasses = computed(() => [
 ]);
 
 function handleClick() {
-  if(!props.submitting){
+  if(!props.submitting && !props.disabled){
     emit('click');
   }
 }

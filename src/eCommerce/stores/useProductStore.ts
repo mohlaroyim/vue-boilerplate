@@ -1,8 +1,8 @@
-import {defineStore} from "pinia";
-import {freeApiGet} from "@/libs/freeAPI";
-import {useAuthStore} from "@/auth/stores/useAuthStore";
-import type {PaginationType} from "@/ui/types/PaginationType";
-import type {ProductType} from "@/eCommerce/types/ProductType";
+import { defineStore } from "pinia";
+import { freeApiGet } from "@/libs/freeAPI";
+import { useAuthStore } from "@/auth/stores/useAuthStore";
+import type { PaginationType } from "@/ui/types/PaginationType";
+import type { ProductType } from "@/eCommerce/types/ProductType";
 
 export const useProductStore = defineStore('ProductStore', {
   state: ()=>({
@@ -39,7 +39,7 @@ export const useProductStore = defineStore('ProductStore', {
   },
   getters: {
     canAddProduct(){
-      const {user} = useAuthStore()
+      const { user } = useAuthStore()
 
       return user?.role === 'ADMIN'
     }

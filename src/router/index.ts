@@ -1,6 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
-import {useAuthStore} from "@/auth/stores/useAuthStore";
+import { useAuthStore } from "@/auth/stores/useAuthStore";
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -40,7 +40,7 @@ const router = createRouter({
 //Global Route Guards
 router.beforeEach((to, from, next)=>{
   if(to.meta.requiresAuth){
-    const {isLoggedIn} = useAuthStore()
+    const { isLoggedIn } = useAuthStore()
 
     if (to.name !== 'auth-login' && !isLoggedIn) {
       return next({ name: 'auth-login' });

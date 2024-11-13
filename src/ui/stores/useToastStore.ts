@@ -1,4 +1,4 @@
-import {defineStore} from "pinia";
+import { defineStore } from "pinia";
 
 //Types & Interfaces
 export type ToastStatusType = "success" | "warning" | "error";
