@@ -12,9 +12,7 @@
     "test:unit": "vitest --environment jsdom",
     "build-only": "vite build",
     "type-check": "vue-tsc --build --force",
-    "lint": "eslint --fix",
-    "predeploy": "npm run build",
-    "deploy": "cd dist && cp index.html 404.html"
+    "lint": "eslint --fix"
   },
   "dependencies": {
     "@pinia/testing": "^0.1.7",
