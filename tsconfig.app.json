@@ -3,6 +3,7 @@
   "include": ["env.d.ts", "src/**/*", "src/**/*.vue", "src/**/*.ts", "**/*.ts", "src/**/*.js", "**/*.js", "**/*.vue"],
   "exclude": ["src/**/__tests__/*", "node_modules"],
   "compilerOptions": {
+    "resolveJsonModule": true,
     "composite": true,
     "tsBuildInfoFile": "./node_modules/.tmp/tsconfig.app.tsbuildinfo",
     "target": "esnext",
