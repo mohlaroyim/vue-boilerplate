@@ -2,6 +2,7 @@
   "name": "vue-practice-project",
   "version": "0.0.0",
   "type": "module",
+  "private": true,
   "homepage": "https://mohlaroyim.github.io/vue-boilerplate",
   "scripts": {
     "dev": "vite",
