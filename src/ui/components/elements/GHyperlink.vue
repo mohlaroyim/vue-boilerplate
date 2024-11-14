@@ -1,6 +1,6 @@
 <template>
   <a
-    :href="!disabled ? `/vue-boilerplate/${href}` : undefined"
+    :href="!disabled ? href : undefined"
     :rel="!disabled ? computedRel : undefined"
     :class="[classList, {disabled}]"
     :style="style"
