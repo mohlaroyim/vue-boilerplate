@@ -3,7 +3,7 @@ import HomeView from '../views/HomeView.vue'
 import { useAuthStore } from "@/auth/stores/useAuthStore";
 
 const router = createRouter({
-  history: createWebHistory(),
+  history: createWebHashHistory(),
   routes: [
     {
       path: '/',
