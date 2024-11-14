@@ -1,9 +1,9 @@
-import { createRouter, createWebHashHistory, createWebHistory } from 'vue-router'
+import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
 import { useAuthStore } from "@/auth/stores/useAuthStore";
 
 const router = createRouter({
-  history: createWebHashHistory('/vue-boilerplate/'),
+  history: createWebHistory('/vue-boilerplate/'),
   routes: [
     {
       path: '/',
@@ -32,8 +32,7 @@ const router = createRouter({
     {
       path: '/:pathMatch(.*)*',
       name: 'not-found',
-      redirect:'/',
-      // component: ()=> import('../views/NotFound.vue')
+      component: ()=> import('../views/NotFound.vue')
     }
   ]
 })
