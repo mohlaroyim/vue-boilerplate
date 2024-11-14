@@ -14,7 +14,7 @@
     "type-check": "vue-tsc --build --force",
     "lint": "eslint --fix",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d dist"
+    "deploy": "cd dist && cp index.html 404.html"
   },
   "dependencies": {
     "@pinia/testing": "^0.1.7",

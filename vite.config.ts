@@ -4,7 +4,7 @@ import { defineConfig } from 'vitest/config'
 import vue from '@vitejs/plugin-vue'
 
 export default defineConfig({
-  base: process.env.NODE_ENV === "production" ? '/vue-boilerplate/' : '/',
+  base: '/vue-boilerplate/',
   plugins: [
     vue(),
   ],
